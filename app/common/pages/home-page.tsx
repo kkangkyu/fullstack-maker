@@ -1,28 +1,16 @@
-import type { Route } from "./+types/home-page";
+import { Button } from "~/common/components/ui/button";
 
-export function loader({}: Route.LoaderArgs) {
-  return { greeting: "Welcome to wemake" };
-}
-
-export function action({}: Route.ActionArgs) {
-  return null;
-}
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "wemake • Home" },
-    { name: "description", content: "wemake home experience" },
-  ];
-}
-
-export default function HomePage({ loaderData }: Route.ComponentProps) {
+export default function HomePage() {
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-4 py-16">
-      <h1 className="text-3xl font-semibold">{loaderData.greeting}</h1>
-      <p className="text-muted-foreground">
-        Build full-stack products end to end with wemake.
+    <main className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-6">Welcome to Our App</h1>
+      <p className="text-lg mb-8">
+        Get started by exploring our features or sign in to your account.
       </p>
+      <div className="flex gap-4">
+        <Button variant="default">Get Started</Button>
+        <Button variant="outline">Learn More</Button>
+      </div>
     </main>
   );
 }
-
